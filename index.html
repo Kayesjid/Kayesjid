@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Losowe Zdjęcie</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<img id="image" src="zdjecia/1.jpg" alt="Random Image">
+
+<script>
+    // Lista 40 zdjęć
+    const images = [
+        'zdjecia/1.jpg', 'zdjecia/2.jpg', 'zdjecia/3.jpg', /* dodaj resztę zdjęć do 40 */
+        'zdjecia/40.jpg'
+    ];
+
+    // Funkcja losująca zdjęcie
+    function showRandomImage() {
+        const randomIndex = Math.floor(Math.random() * images.length);
+        document.getElementById('image').src = images[randomIndex];
+    }
+
+    // Dodanie eventu do kliknięcia na stronie
+    document.body.addEventListener('click', showRandomImage);
+</script>
+
+</body>
+</html>
